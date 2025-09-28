@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Book Feedback Form</title>
+</head>
+<body>
+    <h2>Submit Your Feedback</h2>
+    <form th:action="@{/submit}" method="post" th:object="${feedback}">
+        <label>Name:</label>
+        <input type="text" th:field="*{name}" placeholder="Your Name" required /><br><br>
+
+        <label>Book Name:</label>
+        <input type="text" th:field="*{bookName}" placeholder="Book Name" required /><br><br>
+
+        <label>Feedback:</label>
+        <textarea th:field="*{message}" placeholder="Your Feedback" required></textarea><br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    
+</body>
+</html>
